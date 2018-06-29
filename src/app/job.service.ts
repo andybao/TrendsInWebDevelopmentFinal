@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Job } from './job';
+import { JobDetail } from './job-detail';
 import { Observable, of, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
@@ -24,8 +25,8 @@ export class JobService {
     );  
   }
 
-  getJob(id: string): Observable<Job>{
-      return this.http.get<Job>(`http://andybao.net/apis/magic.php?api_key=123&id=${id}`).pipe(
+  getJob(id: string): Observable<JobDetail>{
+      return this.http.get<JobDetail>(`http://andybao.net/apis/magic.php?api_key=123&id=${id}`).pipe(
         catchError(this.handleError)
       ); 
   }

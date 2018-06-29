@@ -4,7 +4,7 @@ export class Job {
     summary: string;
     location: string;
     url: string;
-    date: Date;
+    date: string;
     company: string;
     id: string;
 }
