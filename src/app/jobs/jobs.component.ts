@@ -20,6 +20,9 @@ export class JobsComponent implements OnInit {
       console.log(value);
       this.jobService.getJobListByKey(value).subscribe(result => this.jobs = result.slice(1,21));
     }
+    else{
+      this.jobService.getJobList().subscribe(result => this.jobs = result.slice(1,21));
+    }
   }
 
   constructor(
