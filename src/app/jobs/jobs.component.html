@@ -1,10 +1,10 @@
-<h2>Job List</h2>
-<div class="row">
-  <ul>
-    <li *ngFor="let j of jobs">
-      <a routerLink="/kevin/jobdetail/{{j.id}}">{{ j.title }}</a>
-    </li>
-  </ul>
+<h2 class="text-center">Job List</h2>
+
+<div class="row justify-content-around">
+  <div class="job m-1 col-md-4 text-center" *ngFor="let j of jobs">
+    <a routerLink="/kevin/jobdetail/{{j.id}}">{{ j.title }}</a>
+    <p>{{ j.location }}</p>
+  </div>
 </div>
 
 
