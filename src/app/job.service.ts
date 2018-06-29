@@ -25,6 +25,12 @@ export class JobService {
     );  
   }
 
+  getJobListByKey(job: string): Observable<Job[]>{
+    return this.http.get<Job[]>(`http://andybao.net/apis/magic.php?api_key=123&job=${job}`).pipe(
+      catchError(this.handleError)
+    );  
+  }
+
   getJob(id: string): Observable<JobDetail>{
       return this.http.get<JobDetail>(`http://andybao.net/apis/magic.php?api_key=123&id=${id}`).pipe(
         catchError(this.handleError)

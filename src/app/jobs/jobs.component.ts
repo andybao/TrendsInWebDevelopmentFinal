@@ -13,6 +13,15 @@ export class JobsComponent implements OnInit {
 
   jobs: Job[];
 
+  value = '';
+  onEnter(value:string){
+    if (value != "")
+    {
+      console.log(value);
+      this.jobService.getJobListByKey(value).subscribe(result => this.jobs = result.slice(1,21));
+    }
+  }
+
   constructor(
     // private route: ActivatedRoute,
     // private location: Location,
