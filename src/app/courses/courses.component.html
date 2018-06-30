@@ -1,3 +1,21 @@
-<p>
-  courses works!
+
+<h2>Display Multiple Results</h2>
+<p *ngFor="let c of courses">
+    {{c.code}}
+    &nbsp;
+    {{c.name}}
+    &nbsp;
+    {{c.instructor}}
 </p>
+
+<h2>Singular Result</h2>
+<p>
+    <span *ngFor="let c of courses" (click)="onSelect(c)">
+        {{c.code}} &nbsp;
+    </span>
+</p>
+<div *ngIf="course">
+    <p>
+        <span>{{course.code}}&nbsp;{{course.name}}&nbsp;{{course.instructor}}</span>
+    </p>
+</div>
